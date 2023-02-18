@@ -34,8 +34,15 @@ public class ImageService {
         Image image = imageRepository2.findById(id).get();
         String imageDimension = image.getDimensions();
         String[] imageSizeArr = imageDimension.split("X");
-        int screenArea = Integer.parseInt(screenSizeArr[0]) * Integer.parseInt(screenSizeArr[1]);
-        int imageArea = Integer.parseInt(imageSizeArr[0]) * Integer.parseInt(imageSizeArr[1]);
-        return screenArea / imageArea;
+//        int screenArea = Integer.parseInt(screenSizeArr[0]) * Integer.parseInt(screenSizeArr[1]);
+//        int imageArea = Integer.parseInt(imageSizeArr[0]) * Integer.parseInt(imageSizeArr[1]);
+//        return screenArea / imageArea;
+        int sl = Integer.parseInt(screenSizeArr[0]);
+        int sb = Integer.parseInt(screenSizeArr[1]);
+
+        int il = Integer.parseInt(imageSizeArr[0]);
+        int ib = Integer.parseInt(imageSizeArr[1]);
+
+        return (sl /il) * (sb/ ib);
     }
 }
